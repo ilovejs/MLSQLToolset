@@ -22,7 +22,7 @@
 
 ## How to run:
 ```bash
-### tsql
+# tsql
 java -jar target/codebuff-1.5.1.jar \
     -g org.antlr.codebuff.tsql \
     -rule tsql_file \
@@ -30,10 +30,18 @@ java -jar target/codebuff-1.5.1.jar \
     -files sql -indent 4 -comment LINE_COMMENT \
     rsc/sql1.sql
 
-## sqlite
+# sqlite
 java -jar target/codebuff-1.5.1.jar \
     -g org.antlr.codebuff.SQLite \
     -rule parse \
+    -corpus corpus/sql/training \
+    -files sql -indent 4 -comment LINE_COMMENT \
+    rsc/sql1.sql
+    
+# pl/pgsql
+java -jar target/codebuff-1.5.1.jar \
+    -g org.antlr.thirdparty.PostgreSql \
+    -rule tsql_file \
     -corpus corpus/sql/training \
     -files sql -indent 4 -comment LINE_COMMENT \
     rsc/sql1.sql
@@ -47,9 +55,18 @@ more codebuff setup:
     * Doc/codebuff_readme.md (bad doc)
 
 ## Credits
-code adapt from 
 
-* [antlr4-grammar-postgresql](https://github.com/tunnelvisionlabs/antlr4-grammar-postgresql)
+Lexar
 
-* [codebuff](https://github.com/antlr/codebuff)
+    * [antlr4-grammar-postgresql](https://github.com/tunnelvisionlabs/antlr4-grammar-postgresql)
+    * this repo is in progress
+
+    * [codebuff](https://github.com/antlr/codebuff)
+
+Parser
+
+    * [pg_sql_parser](https://github.com/valgog/pg_sql_parser)
+    * [antlr_psql](https://github.com/tshprecher/antlr_psql)
+
+
 
